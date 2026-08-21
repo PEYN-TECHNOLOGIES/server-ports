@@ -1,0 +1,17 @@
+Host Port,Proto,Binding,Project,Container,Container Port,Status,Notes
+3000,tcp,Public (0.0.0.0),nyamadi-studio,nyamadi-studio-api-1,3000,Up,
+3002,tcp,Public (0.0.0.0),monitoring,grafana,3000,Up,
+3100,tcp,Loopback (127.0.0.1),asarecars,asarecars-api-1,3100,Up,Behind host nginx (not in this list)
+3101,tcp,Public (0.0.0.0),peyn-media-service,peyn-media-service-api-1,3000,Up,Plan: move to loopback once nginx/TLS setup (media.peyn.tech) lands
+3200,tcp,Public (0.0.0.0),monitoring,uptime-kuma,3001,Up,
+5173,tcp,Public (0.0.0.0),nyamadi-studio,nyamadi-studio-site-1,80,Up,
+5174,tcp,Public (0.0.0.0),nyamadi-studio,nyamadi-studio-admin-1,80,Up,
+5273,tcp,Loopback (127.0.0.1),asarecars,asarecars-app-1,80,Up,Behind host nginx (not in this list)
+5274,tcp,Loopback (127.0.0.1),asarecars,asarecars-admin-1,80,Up,Behind host nginx (not in this list)
+5432,tcp,Public (0.0.0.0),peyn-media-service,peyn-media-service-postgres-1,5432,Up,Only Postgres on this host published to the host at all
+6379,tcp,Public (0.0.0.0),peyn-media-service,peyn-media-service-redis-1,6379,Up,Not strictly needed on the host
+8080,tcp,Public (0.0.0.0),monitoring,cadvisor,8080,Up,
+9000,tcp,Public (0.0.0.0),monitoring,minio,9000,Up,Shared MinIO — peyn-media-service reuses this instead of running its own
+9001,tcp,Public (0.0.0.0),monitoring,minio,9001,Up,MinIO console
+9100,tcp,Public (0.0.0.0),monitoring,portainer,9100,Up,Shares a number with node-exporter's internal-only 9100 — no real conflict
+9443,tcp,Public (0.0.0.0),monitoring,portainer,9443,Up,

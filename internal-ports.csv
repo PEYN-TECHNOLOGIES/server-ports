@@ -1,0 +1,6 @@
+Project,Container,Container Port,Notes
+asarecars,asarecars-postgres-1,5432,Only reachable from other containers on its own compose network
+nyamadi-studio,nyamadi-studio-db-1,5432,Same — not published to host
+monitoring,node-exporter,9100,Scraped by Prometheus over the internal network only
+monitoring,portainer,8000,Internal only
+monitoring,portainer,9000,Internal only — shares a number with MinIO's published 9000; fine as long as it stays unpublished
